@@ -1,0 +1,175 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CompassSurveys</name>
+    </assembly>
+    <members>
+        <member name="T:CompassSurveys.Controllers.SurveyController">
+            <summary>  
+            This Controller performs Survey related actions.    
+            </summary>  
+        </member>
+        <member name="M:CompassSurveys.Controllers.SurveyController.#ctor(Microsoft.Extensions.Logging.ILogger{CompassSurveys.Controllers.SurveyController},CompassSurveys.Models.IDatabaseManager)">
+            <summary>  
+            Initializes a new instance of the <see cref="T:CompassSurveys.Controllers.SurveyController" /> class.  
+            </summary>  
+            <param name="logger">The logger.</param> 
+            <param name="databaseManager">The Database Manager.</param> 
+        </member>
+        <member name="M:CompassSurveys.Controllers.SurveyController.GetSurveys">
+            <summary>  
+            Gets all Surveys.  
+            </summary>  
+        </member>
+        <member name="M:CompassSurveys.Controllers.SurveyController.GetQuestions(System.Int64)">
+            <summary>  
+            Gets Questions and Options of the given Survey ID.  
+            </summary>  
+            <param name="surveyID">Survey ID.</param> 
+        </member>
+        <member name="T:CompassSurveys.Filters.InformationLogger">
+            <summary>  
+            This class is used to log every action activity  
+            </summary>  
+        </member>
+        <member name="M:CompassSurveys.Filters.InformationLogger.#ctor(Microsoft.Extensions.Logging.ILogger{CompassSurveys.Filters.InformationLogger})">
+            <summary>  
+            Initializes a new instance of the <see cref="T:CompassSurveys.Filters.InformationLogger" /> class.  
+            </summary>  
+            <param name="logger">The logger.</param> 
+        </member>
+        <member name="M:CompassSurveys.Filters.InformationLogger.OnActionExecuting(Microsoft.AspNetCore.Mvc.Filters.ActionExecutingContext)">
+            <summary>  
+            Called when [action executing].  
+            </summary>  
+            <param name="context">The filter context.</param>  
+        </member>
+        <member name="M:CompassSurveys.Filters.InformationLogger.OnActionExecuted(Microsoft.AspNetCore.Mvc.Filters.ActionExecutedContext)">
+            <summary>  
+            Called when [action executed].  
+            </summary>  
+            <param name="context"></param>  
+        </member>
+        <member name="M:CompassSurveys.Filters.InformationLogger.Log(System.String,Microsoft.AspNetCore.Routing.RouteData)">
+            <summary>  
+            Logs the specified method name.  
+            </summary>  
+            <param name="methodName">Name of the method.</param>  
+            <param name="routeData">The route data.</param>  
+        </member>
+        <member name="T:CompassSurveys.Models.DatabaseManager">
+            <summary>  
+            This class is used to perform Database related activities
+            </summary>  
+        </member>
+        <member name="M:CompassSurveys.Models.DatabaseManager.#ctor(CompassSurveys.Models.CompassSurveysContext)">
+            <summary>  
+            Initializes a new instance of the <see cref="T:CompassSurveys.Models.DatabaseManager" /> class.  
+            </summary>  
+            <param name="surveysContext">The context.</param> 
+        </member>
+        <member name="M:CompassSurveys.Models.DatabaseManager.GetSurveys">
+            <summary>  
+            Gets all Surveys from database.  
+            </summary>  
+        </member>
+        <member name="M:CompassSurveys.Models.DatabaseManager.GetSurveysWithQuestions(System.Int64)">
+            <summary>  
+            Gets Questions and Options of the given Survey ID from the database.  
+            </summary>  
+            <param name="surveyID">Survey ID.</param> 
+        </member>
+        <member name="M:CompassSurveys.Models.DatabaseManager.GetOptions(System.Int64)">
+            <summary>  
+            Gets Options of the given Question ID from the database.  
+            </summary>  
+            <param name="QuestionID">Question ID.</param> 
+        </member>
+        <member name="T:CompassSurveys.Models.IDatabaseManager">
+            <summary>  
+            This Interface is used to perform Database related activities
+            </summary>  
+        </member>
+        <member name="M:CompassSurveys.Models.IDatabaseManager.GetSurveys">
+            <summary>  
+            Gets all Surveys from database.  
+            </summary> 
+        </member>
+        <member name="M:CompassSurveys.Models.IDatabaseManager.GetSurveysWithQuestions(System.Int64)">
+            <summary>  
+            Gets Questions and Options of the given Survey ID from the database.  
+            </summary>  
+            <param name="surveyID">Survey ID.</param> 
+        </member>
+        <member name="P:CompassSurveys.Models.Option.Id">
+            <summary>  
+            Option ID.  
+            </summary>
+        </member>
+        <member name="P:CompassSurveys.Models.Option.Name">
+            <summary>  
+            Option Name.
+            </summary>
+        </member>
+        <member name="P:CompassSurveys.Models.Option.QuestionId">
+            <summary>  
+            Question ID.  
+            </summary>
+        </member>
+        <member name="P:CompassSurveys.Models.Question.Id">
+            <summary>  
+            Question ID.  
+            </summary>
+        </member>
+        <member name="P:CompassSurveys.Models.Question.CreatedBy">
+            <summary>  
+            Created By.
+            </summary>
+        </member>
+        <member name="P:CompassSurveys.Models.Question.CreatedDate">
+            <summary>  
+            Created Date.  
+            </summary>
+        </member>
+        <member name="P:CompassSurveys.Models.Question.Title">
+            <summary>  
+            Title
+            </summary>
+        </member>
+        <member name="P:CompassSurveys.Models.Question.SubTitle">
+            <summary>  
+            Sub Title
+            </summary>
+        </member>
+        <member name="P:CompassSurveys.Models.Question.Type">
+            <summary>  
+            Question Type.  
+            </summary>
+        </member>
+        <member name="P:CompassSurveys.Models.Question.SurveyId">
+            <summary>  
+            Survey ID 
+            </summary>
+        </member>
+        <member name="P:CompassSurveys.Models.Question.Options">
+            <summary>  
+            List Of Options 
+            </summary>
+        </member>
+        <member name="P:CompassSurveys.Models.Survey.Id">
+            <summary>  
+            Survey ID.  
+            </summary>
+        </member>
+        <member name="P:CompassSurveys.Models.Survey.Name">
+            <summary>  
+            Survey Name.  
+            </summary>
+        </member>
+        <member name="P:CompassSurveys.Models.Survey.Questions">
+            <summary>  
+            List Of Questions  
+            </summary>
+        </member>
+    </members>
+</doc>
